@@ -1,0 +1,68 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 回転数 -->
+        <TextView android:text="回転数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/rotationEditText"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- 契機（プルダウン+手入力） -->
+        <TextView android:text="契機"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <AutoCompleteTextView
+            android:id="@+id/triggerInput"
+            android:hint="選択または直接入力"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- 契機の回数 -->
+        <TextView android:text="契機の回数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/triggerCountEditText"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- ボーナスの種類（Spinner） -->
+        <TextView android:text="ボーナスの種類"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/bonusTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- 備考 -->
+        <TextView android:text="備考"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/noteEditText"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- 保存ボタン -->
+        <Button
+            android:id="@+id/saveBonusButton"
+            android:text="保存"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>
