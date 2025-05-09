@@ -1,0 +1,99 @@
+
+AndroidStudio、Javaでスロットの設定判別スマホアプリを作成したいのです。
+
+1BIGにつき、6回キャラがでてくるのですが、その発生したキャラをBIG毎に集計して、発生確率を求めたいのです。
+
+
+
+
+
+キャラに関しては、
+●アクア(Aqua)
+●ダクネス(Darkness)
+●めぐみん(Megumin)
+●ウィズ(Wiz)
+●ゆんゆん(Yunyun)
+●クリス(Chris)
+●サキュバス(succubus)
+●確定系(others)
+
+※()内は英語表記
+
+上記キャラが出現します。
+上記をEnumで管理する場合、どのようになりますか？
+
+
+
+------------------------------------------------------------
+
+
+
+
+
+MainActivity.java
+├── タブ画面のホスト
+├── TabLayout + ViewPager2 により画面切替
+├── 2つのFragmentを表示：
+│
+├─── BonusFragment.java ←★ 新規画面（ボーナス入力）
+│    └─（将来的に）テキスト保存機能追加予定
+│
+└─── SettingFragment.java ←★ 既存画面（ミニキャラ設定判別）
+     ├── CharacterAdapter.java（リスト表示＋カウント管理）
+     ├── CharacterType.java（Enumでキャラ管理）
+     └── FileUtil.java（出現履歴ファイルの保存／読み込み）
+
+
+ファイル名	主な役割	関連画面
+MainActivity.java	アプリの起点／タブ切替のコントローラ	全体
+BonusFragment.java	ボーナス詳細の入力画面	タブ1（左）
+SettingFragment.java	ミニキャラ出現数の管理／表示	タブ2（右）
+CharacterAdapter.java	キャラごとのカウント＋確率表示の RecyclerView Adapter	SettingFragment
+CharacterType.java	キャラクター名の定義（Enum）	SettingFragment
+FileUtil.java	ファイル読み書き（BIGデータ、vol管理）	SettingFragment
+
+
+
+            System.out.println("*****************************************************");
+            System.out.println("totalBigCount : " + totalBigCount);
+            System.out.println("*****************************************************");
+
+
+
+
+「契機」の選択は以下で、さらに直接入力もできるようにすることは可能でしょうか
+・チャンス目
+・🍒
+・🍉
+・リーチ目
+・単独
+
+
+
+
+--------------------------------------------------
+
+
+以下、タイトルです。
+【A+このすばボーナス詳細】2025_05_07_vol_01
+
+
+
+以下、開始時にテキストに書き込まれる内容です。
+【A+このすばボーナス詳細】2025_05_07_vol_01
+(開始ゲーム数：1234)
+
+※開始ゲーム数が0の場合
+→それは書き込まれなく、入力された1回目のボーナス詳細が書き込まれる
+※開始ゲーム数が0以外の場合
+上記の()内が記述される
+
+
+
+
+
+
+
+
+
+
