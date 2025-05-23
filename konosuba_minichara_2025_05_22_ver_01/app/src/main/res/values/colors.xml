@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="default_button">#CCCCCC</color> <!-- グレー（非表示時） -->
+    <color name="highlight_all">#A5D6A7</color> <!-- 緑（全件表示中） -->
+    <color name="highlight_summary">#FFCC80</color> <!-- オレンジ（合計表示中） -->
+</resources>

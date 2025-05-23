@@ -1,0 +1,185 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 回転数 -->
+        <TextView android:text="回転数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/rotationEditText"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- 契機（プルダウン+手入力） -->
+        <TextView android:text="契機"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <AutoCompleteTextView
+            android:id="@+id/triggerInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="契機を選択または入力"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- 契機の回数 -->
+        <TextView android:text="契機の回数"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/triggerCountEditText"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- ボーナスの種類（Spinner） -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ボーナスの種類" />
+
+        <Spinner
+            android:id="@+id/bonusTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 備考 -->
+        <TextView android:text="備考"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/noteEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="備考を入力"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLines="3"
+            android:layout_marginBottom="16dp"/>
+
+
+        <!-- 開始ボタン -->
+        <Button
+            android:id="@+id/startBonusButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="開始"
+            android:layout_marginTop="12dp" />
+
+        <!-- 保存ボタン -->
+        <Button
+            android:id="@+id/saveBonusButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:layout_marginTop="8dp" />
+
+        <!-- リセットボタン -->
+        <Button
+            android:id="@+id/resetBonusButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="リセット"
+            android:layout_marginTop="8dp" />
+
+        <!-- 新規 -->
+        <Button
+            android:id="@+id/newSessionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="新規"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/showBonusFileButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="表示"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- 表示用スクロール付きテキスト -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/bonusFileContentTextView"
+                android:textIsSelectable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:background="#F5F5F5"
+                android:textColor="#000000"/>
+        </ScrollView>
+
+        <!-- 表示・編集・保存 切り替えボタン群 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="end">
+
+            <!-- 編集モード切り替えボタン -->
+            <Button
+                android:id="@+id/toggleEditButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="編集"
+                android:layout_marginEnd="8dp" />
+
+            <!-- 編集内容保存ボタン（編集中のみ表示）-->
+            <Button
+                android:id="@+id/saveEditButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="保存"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- 編集用スクロール付きテキスト -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <EditText
+                android:id="@+id/editableContentTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:background="@android:color/transparent"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:enabled="false"
+                android:gravity="start"
+                android:padding="8dp"
+                android:textIsSelectable="true"
+                />
+
+        </ScrollView>
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>
